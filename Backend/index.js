@@ -23,9 +23,14 @@ connectCloudinary();
 
 app.use(express.json({ limit: "10kb" }));
         
+const allowedOrigins = (process.env.API_URL || "http://localhost:3000")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+
 app.use(
     cors({
-        origin:process.env.API_URL,
+        origin: allowedOrigins,
         credentials: true,
     })
 );
@@ -60,8 +65,10 @@ app.get("/api/shops/search", searchShops);
 app.use("/api", contactRoutes);
 
 
-app.listen(process.env.PORT , ()=>{
-    console.log("PORT IS RUNNING ON 5000")
-})
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 
 
