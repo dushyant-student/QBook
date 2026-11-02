@@ -1,0 +1,48 @@
+
+@import "tailwindcss";
+
+/* Button stretch animation */
+@keyframes stretch {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(var(--stretch-scale, 1.06));
+  }
+}
+
+.animate-stretch {
+  --stretch-scale: 1.06;
+  animation: stretch 1s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .animate-stretch {
+    --stretch-scale: 1.04;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .animate-stretch {
+    --stretch-scale: 1.02;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-stretch {
+    animation: none;
+  }
+}
+
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

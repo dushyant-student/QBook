@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Sky Background Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#81ecec" />
+      <stop offset="100%" stop-color="#74b9ff" />
+    </linearGradient>
+
+    <!-- Wall Texture Gradient -->
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f2f6" />
+    </linearGradient>
+
+    <!-- Signboard Gradient -->
+    <linearGradient id="signGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d3436" />
+      <stop offset="100%" stop-color="#1e272e" />
+    </linearGradient>
+
+    <!-- Glass Reflection Gradient -->
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+      <stop offset="30%" stop-color="#81ecec" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#0984e3" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Door Glass Gradient -->
+    <linearGradient id="doorGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#81ecec" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#74b9ff" stop-opacity="0.5" />
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#2d3436" flood-opacity="0.2" />
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="800" height="600" fill="url(#skyGrad)" />
+
+  <!-- Ground / Pavement -->
+  <rect y="470" width="800" height="130" fill="#a4b0be" />
+  <rect y="470" width="800" height="15" fill="#747d8c" />
+  <!-- Pavement Grid Lines -->
+  <path d="M 0 520 L 800 520 M 0 560 L 800 560 M 120 485 L 80 600 M 280 485 L 240 600 M 440 485 L 400 600 M 600 485 L 560 600 M 760 485 L 720 600" stroke="#747d8c" stroke-width="2" opacity="0.4" />
+
+  <!-- Main Store Structure -->
+  <rect x="130" y="90" width="540" height="380" fill="url(#wallGrad)" filter="url(#dropShadow)" />
+  <rect x="120" y="460" width="560" height="12" fill="#2f3542" rx="2" />
+
+  <!-- Roof Crown Molding -->
+  <rect x="110" y="75" width="580" height="20" fill="#2f3542" rx="3" filter="url(#softShadow)" />
+  <rect x="120" y="95" width="560" height="8" fill="#57606f" />
+
+  <!-- Store Signboard -->
+  <g filter="url(#dropShadow)">
+    <rect x="170" y="125" width="460" height="70" rx="8" fill="url(#signGrad)" stroke="#ff7675" stroke-width="3" />
+    <rect x="178" y="133" width="444" height="54" rx="5" fill="none" stroke="#ffeaa7" stroke-width="1.5" stroke-dasharray="6,4" />
+    <text x="400" y="168" font-family="&#39;Courier New&#39;, Courier, monospace" font-size="30" font-weight="bold" fill="#ffeaa7" text-anchor="middle" letter-spacing="6">THE CORNER SHOP</text>
+    <circle cx="200" cy="160" r="4" fill="#ffeaa7" />
+    <circle cx="600" cy="160" r="4" fill="#ffeaa7" />
+  </g>
+
+  <!-- Left Display Window -->
+  <g filter="url(#softShadow)">
+    <rect x="170" y="275" width="165" height="175" rx="4" fill="#2f3542" />
+    <rect x="175" y="280" width="155" height="165" rx="2" fill="url(#glassGrad)" />
+    <rect x="175" y="280" width="155" height="165" rx="2" fill="none" stroke="#2f3542" stroke-width="4" />
+    <!-- Pedestal & Display Vase -->
+    <ellipse cx="252" cy="425" rx="40" ry="8" fill="#57606f" opacity="0.4" />
+    <rect x="230" y="375" width="45" height="50" fill="#ffffff" opacity="0.9" />
+    <path d="M 245 375 Q 237 345 252 335 Q 267 345 260 375 Z" fill="#ff7675" />
+    <!-- Window Reflections -->
+    <path d="M 185 290 L 245 290 L 195 440 L 185 440 Z" fill="#ffffff" opacity="0.2" />
+    <path d="M 260 290 L 280 290 L 220 440 L 200 440 Z" fill="#ffffff" opacity="0.1" />
+  </g>
+
+  <!-- Right Display Window -->
+  <g filter="url(#softShadow)">
+    <rect x="465" y="275" width="165" height="175" rx="4" fill="#2f3542" />
+    <rect x="470" y="280" width="155" height="165" rx="2" fill="url(#glassGrad)" />
+    <rect x="470" y="280" width="155" height="165" rx="2" fill="none" stroke="#2f3542" stroke-width="4" />
+    <!-- Display Stand & Item -->
+    <ellipse cx="547" cy="425" rx="40" ry="8" fill="#57606f" opacity="0.4" />
+    <path d="M 545 335 L 550 335 L 550 425 L 545 425 Z" fill="#2f3542" />
+    <path d="M 532 425 L 563 425 L 547 415 Z" fill="#2f3f42" />
+    <path d="M 537 345 Q 547 335 557 345 L 567 390 Q 547 400 527 390 Z" fill="#fd79a8" />
+    <!-- Window Reflections -->
+    <path d="M 480 290 L 540 290 L 490 440 L 480 440 Z" fill="#ffffff" opacity="0.2" />
+  </g>
+
+  <!-- Central Glass Door -->
+  <g filter="url(#softShadow)">
+    <rect x="355" y="255" width="90" height="205" rx="2" fill="#2f3542" />
+    <rect x="362" y="262" width="76" height="191" fill="url(#doorGlass)" />
+    <!-- Door Bottom Panel -->
+    <rect x="362" y="400" width="76" height="53" fill="#2f3542" />
+    <rect x="368" y="406" width="64" height="41" fill="#57606f" opacity="0.3" />
+    <!-- Door Handle -->
+    <rect x="370" y="340" width="6" height="28" rx="2" fill="#ffeaa7" filter="url(#softShadow)" />
+    <!-- OPEN Sign -->
+    <rect x="378" y="300" width="44" height="20" rx="3" fill="#ffffff" stroke="#2f3542" stroke-width="1.5" />
+    <text x="400" y="314" font-family="sans-serif" font-size="9" font-weight="bold" fill="#00b894" text-anchor="middle">OPEN</text>
+    <!-- Reflection -->
+    <path d="M 368 268 L 400 268 L 378 390 L 368 390 Z" fill="#ffffff" opacity="0.2" />
+  </g>
+
+  <!-- Striped Awning -->
+  <g filter="url(#dropShadow)">
+    <path d="M 140 200 L 660 200 L 680 250 L 120 250 Z" fill="#ff7675" />
+    
+    <!-- White Stripes -->
+    <path d="M 175 200 L 215 200 L 205 250 L 160 250 Z" fill="#ffffff" />
+    <path d="M 255 200 L 295 200 L 290 250 L 245 250 Z" fill="#ffffff" />
+    <path d="M 335 200 L 375 200 L 380 250 L 335 250 Z" fill="#ffffff" />
+    <path d="M 415 200 L 455 200 L 470 250 L 425 250 Z" fill="#ffffff" />
+    <path d="M 495 200 L 535 200 L 560 250 L 515 250 Z" fill="#ffffff" />
+    <path d="M 575 200 L 615 200 L 645 250 L 600 250 Z" fill="#ffffff" />
+
+    <!-- Awning Shadow Layer -->
+    <path d="M 120 250 L 680 250 L 670 240 L 130 240 Z" fill="#000000" opacity="0.15" />
+
+    <!-- Scalloped Edges -->
+    <path d="M 120 250 Q 135 265 150 250 Q 165 265 180 250 Q 195 265 210 250 Q 225 265 240 250 Q 255 265 270 250 Q 285 265 300 250 Q 315 265 330 250 Q 345 265 360 250 Q 375 265 390 250 Q 405 265 420 250 Q 435 265 450 250 Q 465 265 480 250 Q 495 265 510 250 Q 525 265 540 250 Q 555 265 570 250 Q 585 265 600 250 Q 615 265 630 250 Q 645 265 660 250 Q 675 265 680 250 L 680 250 L 120 250 Z" fill="#d63031" />
+  </g>
+
+  <!-- Wall Sconce Lamps -->
+  <!-- Left Lamp -->
+  <g filter="url(#softShadow)">
+    <rect x="145" y="280" width="8" height="14" fill="#2f3542" />
+    <path d="M 153 285 C 163 285 163 300 158 305" fill="none" stroke="#2f3542" stroke-width="3" />
+    <polygon points="148,305 168,305 173,320 143,320" fill="#2f3542" />
+    <polygon points="150,320 166,320 161,330 155,330" fill="#ffeaa7" opacity="0.9" />
+  </g>
+
+  <!-- Right Lamp -->
+  <g filter="url(#softShadow)">
+    <rect x="647" y="280" width="8" height="14" fill="#2f3542" />
+    <path d="M 647 285 C 637 285 637 300 642 305" fill="none" stroke="#2f3542" stroke-width="3" />
+    <polygon points="632,305 652,305 657,320 627,320" fill="#2f3542" />
+    <polygon points="634,320 650,320 645,330 639,330" fill="#ffeaa7" opacity="0.9" />
+  </g>
+
+  <!-- Plant Pots -->
+  <!-- Left Plant -->
+  <g filter="url(#dropShadow)">
+    <polygon points="110,470 140,470 135,425 115,425" fill="#e17055" />
+    <rect x="113" y="420" width="24" height="6" fill="#d63031" rx="1" />
+    <circle cx="125" cy="405" r="20" fill="#00b894" />
+    <circle cx="115" cy="395" r="14" fill="#55efc4" />
+    <circle cx="135" cy="393" r="12" fill="#00b894" />
+  </g>
+
+  <!-- Right Plant -->
+  <g filter="url(#dropShadow)">
+    <polygon points="660,470 690,470 685,425 665,425" fill="#e17055" />
+    <rect x="663" y="420" width="24" height="6" fill="#d63031" rx="1" />
+    <circle cx="675" cy="405" r="20" fill="#00b894" />
+    <circle cx="685" cy="395" r="14" fill="#55efc4" />
+    <circle cx="665" cy="393" r="12" fill="#00b894" />
+  </g>
+
+  <!-- Door Mat -->
+  <polygon points="360,468 440,468 446,478 354,478" fill="#6c5ce7" opacity="0.9" />
+  <text x="400" y="475" font-family="sans-serif" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">WELCOME</text>
+</svg>
