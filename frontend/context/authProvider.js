@@ -29,10 +29,10 @@ export function AuthProvider({ children }) {
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/auth/me`,
           {
-            credentials: "include",
-            cache: "no-store",
+              credentials: "include",
+              cache: "no-store",
           }
-        );
+      );
 
 
         const data = await response.json();
