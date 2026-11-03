@@ -97,10 +97,10 @@ export default async function BookingTicket() {
 
     return (
         <div className="mt-20 min-h-screen px-4 py-8">
-
+{/* 
             <p className="fixed left-0 top-20 z-40 bg-orange-400 px-3 py-2 text-lg font-bold text-white">
                 BOOKING TICKETS
-            </p>
+            </p> */}
 
             {userTickets.map((item, index) => {
                 const shopId =
