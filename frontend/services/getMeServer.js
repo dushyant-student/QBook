@@ -4,7 +4,7 @@ export async function getMeServer() {
     const cookieStore = await cookies();
     const token = cookieStore.get("token")?.value;
     
-    API_URL = process.env.BACKEND_API_URL;
+    const API_URL = process.env.BACKEND_API_URL;
     if (!token) {
         return null;
     }
