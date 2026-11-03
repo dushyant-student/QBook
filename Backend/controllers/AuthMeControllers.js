@@ -6,7 +6,7 @@ export const getMe = async (req, res) => {
   try {
 
     const token = req.cookies?.token;
-    console.log("TOKEN in BACKEND GET-ME:- ", token);
+  
 
     if (!token) {
       return res.status(201).json({

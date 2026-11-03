@@ -13,16 +13,16 @@ import toast from "react-hot-toast";
 export default function LoginForm({ type = "login" }) {
   const router = useRouter();
   const isLogin = type === "login";
-  const { user ,login } = useAuth()
- 
+  const { user, login } = useAuth()
+
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
-  name: "",
-  email: "",
-  passWord: "",
-  confirmPassword: "",
-});
+    name: "",
+    email: "",
+    passWord: "",
+    confirmPassword: "",
+  });
 
   const handleChange = (e) => {
     setFormData({
@@ -31,27 +31,27 @@ export default function LoginForm({ type = "login" }) {
     });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      
+    try {
+
       const response = await login(formData);
-      if (response?.success){
+      if (response?.success) {
         toast.success("Login Successfully")
       }
-    
 
-    }catch(err){
+
+    } catch (err) {
       // console.log("Login Failed:-",err?.response?.data?.message)
       toast.error(err?.response?.data?.message || "Login failed")
     }
   };
 
-useEffect(() => {
-  if (user) {
-    router.replace("/");
-  }
-}, [user, router]);
+  useEffect(() => {
+    if (user) {
+      router.replace("/");
+    }
+  }, [user, router]);
 
 
   return (
@@ -84,17 +84,17 @@ useEffect(() => {
           </div>
 
 
-          <div className="grid grid-cols-1 gap-3 mb-6">
+          {/* <div className="grid grid-cols-1 gap-3 mb-6">
 
             <button
               type="button"
               className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white py-3 transition"
             >
-              {/* <Chrome size={18} /> */}
+              
               Google
             </button>
 
-          </div>
+          </div> */}
 
           {/* Divider */}
           <div className="flex items-center gap-3 mb-6">
@@ -191,7 +191,7 @@ useEffect(() => {
                   placeholder="••••••••"
                   autoComplete="current-password"
                   required
-              
+
                   className="w-full rounded-xl border border-white/10 bg-black/20 py-3 pl-10 pr-11 text-white placeholder:text-slate-600 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition"
                 />
 
